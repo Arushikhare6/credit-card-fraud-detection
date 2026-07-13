@@ -6,13 +6,7 @@ from config import RANDOM_STATE, TEST_SIZE, VALID_SIZE, TARGET_COL
  
  
 def prepare_data(df: pd.DataFrame):
-    """
-    Split into train / validation / test sets (stratified on the target)
-    and scale the Time and Amount columns.
- 
-    Returns three DataFrames: train_df, valid_df, test_df (each still
-    containing the target column, for convenience in downstream scripts).
-    """
+    
     X = df.drop(columns=[TARGET_COL])
     y = df[TARGET_COL]
  
